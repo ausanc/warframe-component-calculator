@@ -1,5 +1,5 @@
 import jinja2
-from item_names import item_names_primary, item_names_secondary
+from item_names import item_names_primary, item_names_secondary, item_names_melee, item_names_sentinels
 
 
 # item_names = ['Acceltra', 'Amprex', 'Arca Plasmor', 'Argonak', 'Astilla', 'Attica', 'Basmu', 'Battacor', 'Baza', 'Baza Prime', 'Boar', 'Boar Prime', 'Boltor', 'Boltor Prime', 'Braton Prime', 'Braton Vandal', 'Bubonico', 'Burston', 'Burston Prime', 'Buzlok', 'Cernos', 'Cernos Prime', 'Convectrix', 'Corinth', 'Corinth Prime', 'Cortege', 'Corvas']
@@ -22,4 +22,6 @@ def render_template(template_file_name, context, output_file_name):
 render_template("template.html", {
     "item_names_primary": item_names_primary,
     "item_names_secondary": item_names_secondary,
+    "item_names_melee": item_names_melee,
+    "item_names_sentinels": item_names_sentinels,
     }, "output_test.html")
