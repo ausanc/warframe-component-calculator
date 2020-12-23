@@ -1,0 +1,1 @@
+item_names = ["Acceltra", "Amprex", "Arca Plasmor", "Argonak", "Astilla", "Attica", "Basmu", "Battacor", "Baza", "Baza Prime", "Boar", "Boar Prime", "Boltor", "Boltor Prime", "Braton Prime", "Braton Vandal", "Bubonico", "Burston", "Burston Prime", "Buzlok", "Cernos", "Cernos Prime", "Convectrix", "Corinth", "Corinth Prime", "Cortege", "Corvas"]
