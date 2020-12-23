@@ -12,8 +12,20 @@
 
     <div class="row">
       <div class="col-md-9">
+        <h3>Primary</h3>
         <div class="row">
-          {% for item_name in item_names %}
+          {% for item_name in item_names_primary %}
+          <div class="btn-group-toggle col-md-4 mb-1" data-toggle="buttons">
+            <label class="btn btn-secondary btn-block active" onclick="toggleItem('{{ item_name }}')">
+              <input type="checkbox" checked autocomplete="off">{{ item_name }}
+            </label>
+          </div>
+          {% endfor %}
+        </div>
+
+        <h3>Secondary</h3>
+        <div class="row">
+          {% for item_name in item_names_secondary %}
           <div class="btn-group-toggle col-md-4 mb-1" data-toggle="buttons">
             <label class="btn btn-secondary btn-block active" onclick="toggleItem('{{ item_name }}')">
               <input type="checkbox" checked autocomplete="off">{{ item_name }}
