@@ -3,59 +3,103 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Test Page</title>
+  <title>Warframe Components Calculator</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
   <div class="container">
 
+    <div class="text-center mt-2">
+      <h4>Warframe Component Cost Calculator</h4>
+    </div>
+    <hr>
+
+    
+
     <div class="row">
       <div class="col-md-9">
 
-        <h3>Primary</h3>
-        <div class="row">
-          {% for item_name in item_names_primary %}
-          <div class="btn-group-toggle col-md-4 mb-1" data-toggle="buttons">
-            <label class="btn btn-secondary btn-block active" onclick="toggleItem('{{ item_name }}')">
-              <input type="checkbox" checked autocomplete="off">{{ item_name }}
-            </label>
-          </div>
-          {% endfor %}
-        </div>
+        <ul class="nav nav-tabs" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#primary" role="tab">Primary</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#secondary" role="tab">Secondary</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#melee" role="tab">Melee</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#sentinel" role="tab">Sentinel</a>
+          </li>
+        </ul>
 
-        <h3>Secondary</h3>
-        <div class="row">
-          {% for item_name in item_names_secondary %}
-          <div class="btn-group-toggle col-md-4 mb-1" data-toggle="buttons">
-            <label class="btn btn-secondary btn-block active" onclick="toggleItem('{{ item_name }}')">
-              <input type="checkbox" checked autocomplete="off">{{ item_name }}
-            </label>
-          </div>
-          {% endfor %}
-        </div>
+        <div class="tab-content">
+          <div class="tab-pane fade show active" id="primary" role="tabpanel">
 
-        <h3>Melee</h3>
-        <div class="row">
-          {% for item_name in item_names_melee %}
-          <div class="btn-group-toggle col-md-4 mb-1" data-toggle="buttons">
-            <label class="btn btn-secondary btn-block active" onclick="toggleItem('{{ item_name }}')">
-              <input type="checkbox" checked autocomplete="off">{{ item_name }}
-            </label>
-          </div>
-          {% endfor %}
-        </div>
+            <div class="row">
+              {% for item_name in item_names_primary %}
+              <div class="btn-group-toggle col-md-3 mt-1" data-toggle="buttons">
+                <label class="btn btn-secondary btn-block active" onclick="toggleItem('{{ item_name[0] }}')">
+                  <img src="data/img/{{ item_name[1] }}" alt="" width="100%">
+                  <br>
+                  <input type="checkbox" checked autocomplete="off">{{ item_name[0] }}
+                </label>
+              </div>
+              {% endfor %}
+            </div>
 
-        <h3>Sentinels</h3>
-        <div class="row">
-          {% for item_name in item_names_sentinels %}
-          <div class="btn-group-toggle col-md-4 mb-1" data-toggle="buttons">
-            <label class="btn btn-secondary btn-block active" onclick="toggleItem('{{ item_name }}')">
-              <input type="checkbox" checked autocomplete="off">{{ item_name }}
-            </label>
           </div>
-          {% endfor %}
+          <div class="tab-pane fade" id="secondary" role="secondary">
+
+            <div class="row">
+              {% for item_name in item_names_secondary %}
+              <div class="btn-group-toggle col-md-3 mb-1" data-toggle="buttons">
+                <label class="btn btn-secondary btn-block active" onclick="toggleItem('{{ item_name[0] }}')">
+                  <img src="data/img/{{ item_name[1] }}" alt="" width="100%">
+                  <br>
+                  <input type="checkbox" checked autocomplete="off">{{ item_name[0] }}
+                </label>
+              </div>
+              {% endfor %}
+            </div>
+
+          </div>
+          <div class="tab-pane fade" id="melee" role="melee">
+
+            <div class="row">
+              {% for item_name in item_names_melee %}
+              <div class="btn-group-toggle col-md-3 mb-1" data-toggle="buttons">
+                <label class="btn btn-secondary btn-block active" onclick="toggleItem('{{ item_name[0] }}')">
+                  <img src="data/img/{{ item_name[1] }}" alt="" width="100%">
+                  <br>
+                  <input type="checkbox" checked autocomplete="off">{{ item_name[0] }}
+                </label>
+              </div>
+              {% endfor %}
+            </div>
+
+          </div>
+          <div class="tab-pane fade" id="sentinel" role="sentinel">
+          
+            <div class="row">
+              {% for item_name in item_names_sentinels %}
+              <div class="btn-group-toggle col-md-3 mb-1" data-toggle="buttons">
+                <label class="btn btn-secondary btn-block active" onclick="toggleItem('{{ item_name[0] }}')">
+                  <img src="data/img/{{ item_name[1] }}" alt="" width="100%">
+                  <br>
+                  <input type="checkbox" checked autocomplete="off">{{ item_name[0] }}
+                </label>
+              </div>
+              {% endfor %}
+            </div>
+          
+          </div>
         </div>
+        
 
       </div>
 

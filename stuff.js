@@ -40,12 +40,21 @@ function updateComponentListDisplay() {
   var componentListContainer = document.getElementById("componentListContainer")
   componentListContainer.innerHTML = ""
 
-  for (const componentName in selectedItemsComponents) {
+  selectedItemsComponentsArray = Object.entries(selectedItemsComponents)
+  selectedItemsComponentsArray.sort()
+
+  selectedItemsComponentsArray.forEach(component => {
     var current = componentListContainer.innerHTML
-    var resourceHTML = `<p>${componentName}: ${selectedItemsComponents[componentName]}</p>`
+    var resourceHTML = `<p>${component[0]}: ${component[1]}</p>`
     componentListContainer.innerHTML = current + resourceHTML
+  });
+
+  // for (const componentName in selectedItemsComponents) {
+  //   var current = componentListContainer.innerHTML
+  //   var resourceHTML = `<p>${componentName}: ${selectedItemsComponents[componentName]}</p>`
+  //   componentListContainer.innerHTML = current + resourceHTML
     
-  }
+  // }
 }
 
 function addItem(itemName) {
