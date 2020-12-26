@@ -23,28 +23,23 @@
       <div class="col-md-9">
 
         <ul class="nav nav-tabs" role="tablist">
+          {% for category in category_data %}
           <li class="nav-item">
-            <a class="nav-link active" data-toggle="tab" href="#primary" role="tab">Primary</a>
+            <a class="nav-link {% if loop.first %}active{% endif %}" data-toggle="tab" href="#{{ category.name }}" role="tab">{{ category.name }}</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#secondary" role="tab">Secondary</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#melee" role="tab">Melee</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#sentinel" role="tab">Sentinel</a>
-          </li>
+          {% endfor %}
         </ul>
 
         <div class="tab-content">
-          <div class="tab-pane fade show active" id="primary" role="tabpanel">
+
+          {% for category in category_data %}
+          <div class="tab-pane fade show {% if loop.first %}active{% endif %}" id="{{ category.name }}" role="tabpanel">
 
             <div class="row">
-              {% for item_name in item_names_primary %}
+              {% for item_name in category.item_info %}
               <div class="btn-group-toggle col-md-3 mt-1" data-toggle="buttons">
                 <label class="btn btn-secondary btn-block active" onclick="toggleItem('{{ item_name[0] }}')">
-                  <img src="data/img/{{ item_name[1] }}" alt="" width="100%">
+                  <img src="img/{{ item_name[1] }}" alt="" width="100%">
                   <br>
                   <input type="checkbox" checked autocomplete="off">{{ item_name[0] }}
                 </label>
@@ -53,51 +48,8 @@
             </div>
 
           </div>
-          <div class="tab-pane fade" id="secondary" role="secondary">
+          {% endfor %}
 
-            <div class="row">
-              {% for item_name in item_names_secondary %}
-              <div class="btn-group-toggle col-md-3 mb-1" data-toggle="buttons">
-                <label class="btn btn-secondary btn-block active" onclick="toggleItem('{{ item_name[0] }}')">
-                  <img src="data/img/{{ item_name[1] }}" alt="" width="100%">
-                  <br>
-                  <input type="checkbox" checked autocomplete="off">{{ item_name[0] }}
-                </label>
-              </div>
-              {% endfor %}
-            </div>
-
-          </div>
-          <div class="tab-pane fade" id="melee" role="melee">
-
-            <div class="row">
-              {% for item_name in item_names_melee %}
-              <div class="btn-group-toggle col-md-3 mb-1" data-toggle="buttons">
-                <label class="btn btn-secondary btn-block active" onclick="toggleItem('{{ item_name[0] }}')">
-                  <img src="data/img/{{ item_name[1] }}" alt="" width="100%">
-                  <br>
-                  <input type="checkbox" checked autocomplete="off">{{ item_name[0] }}
-                </label>
-              </div>
-              {% endfor %}
-            </div>
-
-          </div>
-          <div class="tab-pane fade" id="sentinel" role="sentinel">
-          
-            <div class="row">
-              {% for item_name in item_names_sentinels %}
-              <div class="btn-group-toggle col-md-3 mb-1" data-toggle="buttons">
-                <label class="btn btn-secondary btn-block active" onclick="toggleItem('{{ item_name[0] }}')">
-                  <img src="data/img/{{ item_name[1] }}" alt="" width="100%">
-                  <br>
-                  <input type="checkbox" checked autocomplete="off">{{ item_name[0] }}
-                </label>
-              </div>
-              {% endfor %}
-            </div>
-          
-          </div>
         </div>
         
 
@@ -111,8 +63,8 @@
     </div>
   </div>
 
-  <script src="./js/itemComponents.js"></script>
-  <script src="./stuff.js"></script>
+  <script src="./js/item-components.js"></script>
+  <script src="./js/component-list.js"></script>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
