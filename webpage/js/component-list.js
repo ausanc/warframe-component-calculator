@@ -87,6 +87,13 @@ function selectItem(itemName) {
   addItem(itemName)
 }
 
+// Update the button element to not pressed and update the list of components
+function deselectItem(itemName) {
+  button = document.querySelector("#" + allItemNames[itemName])
+  button.classList.add("active")
+  removeItem(itemName)
+}
+
 // Populate the selections from the cookies
 function loadSelectionsFromCookies() {
   Object.keys(allItemNames).forEach(itemName => {
@@ -100,5 +107,16 @@ function loadSelectionsFromCookies() {
   })
 }
 
+function selectAllItems() {
+  Object.keys(allItemNames).forEach(itemName => {
+    selectItem(itemName)
+  })
+}
+
+function deselectAllItems() {
+  Object.keys(allItemNames).forEach(itemName => {
+    deselectItem(itemName)
+  })
+}
 
 loadSelectionsFromCookies()
