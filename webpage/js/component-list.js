@@ -84,14 +84,16 @@ function toggleItem(itemName) {
 function selectItem(itemName) {
   button = document.querySelector("#" + allItemNames[itemName])
   button.classList.remove("active")
-  addItem(itemName)
+  selectedItems.push(itemName)
+  localStorage.setItem(allItemNames[itemName], "selected")
 }
 
 // Update the button element to not pressed and update the list of components
 function deselectItem(itemName) {
   button = document.querySelector("#" + allItemNames[itemName])
   button.classList.add("active")
-  removeItem(itemName)
+  selectedItems.splice(selectedItems.indexOf(itemName), 1)
+  localStorage.removeItem(allItemNames[itemName])
 }
 
 // Populate the selections from the cookies
@@ -105,18 +107,21 @@ function loadSelectionsFromCookies() {
       }
     }
   })
+  updateSelectedItemComponents()
 }
 
 function selectAllItems() {
   Object.keys(allItemNames).forEach(itemName => {
     selectItem(itemName)
   })
+  updateSelectedItemComponents()
 }
 
 function deselectAllItems() {
   Object.keys(allItemNames).forEach(itemName => {
     deselectItem(itemName)
   })
+  updateSelectedItemComponents()
 }
 
 loadSelectionsFromCookies()
