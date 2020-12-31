@@ -16,7 +16,6 @@
       <h4>Warframe Component Cost Calculator</h4>
     </div>
     <hr>
-
     
 
     <div class="row">
@@ -38,7 +37,7 @@
             <div class="row">
               {% for item_name in category.item_info %}
               <div class="btn-group-toggle col-md-3 mt-1" data-toggle="buttons">
-                <label class="btn btn-secondary btn-block active" onclick="toggleItem('{{ item_name[0] }}')">
+                <label class="btn btn-secondary btn-block active" id="{{ item_name[2] }}" onclick="toggleItem('{{ item_name[0] }}')">
                   <img src="img/{{ item_name[1] }}" alt="" width="100%">
                   <br>
                   <input type="checkbox" checked autocomplete="off">{{ item_name[0] }}
@@ -64,6 +63,7 @@
   </div>
 
   <script src="./js/item-components.js"></script>
+  <script src="./js/all-item-names.js"></script>
   <script src="./js/component-list.js"></script>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

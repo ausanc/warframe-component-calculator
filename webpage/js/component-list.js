@@ -16,7 +16,7 @@ function updateSelectedItemComponents() {
   // For each selected item, access the components
   selectedItems.forEach(itemName => {
     components = itemComponents[itemName]
-    console.log(components)
+    // console.log(components)
 
     // For each component, update the count in selectedItemComponents
     components.forEach(component => {
@@ -28,7 +28,7 @@ function updateSelectedItemComponents() {
     });
   });
 
-  console.log(selectedItemsComponents)
+  // console.log(selectedItemsComponents)
   updateComponentListDisplay()
 }
 
@@ -48,19 +48,14 @@ function updateComponentListDisplay() {
     var resourceHTML = `<p>${component[0]}: ${component[1]}</p>`
     componentListContainer.innerHTML = current + resourceHTML
   });
-
-  // for (const componentName in selectedItemsComponents) {
-  //   var current = componentListContainer.innerHTML
-  //   var resourceHTML = `<p>${componentName}: ${selectedItemsComponents[componentName]}</p>`
-  //   componentListContainer.innerHTML = current + resourceHTML
-    
-  // }
 }
 
 function addItem(itemName) {
   // Add the item name to the internal list of selected items
   selectedItems.push(itemName)
-  console.log(selectedItems)
+
+  // Update the cookie
+  localStorage.setItem(allItemNames[itemName], "selected")
 
   // Regenerate the list of required components
   updateSelectedItemComponents()
@@ -69,7 +64,9 @@ function addItem(itemName) {
 function removeItem(itemName) {
   // Remove the item name from the internal list of selected items
   selectedItems.splice(selectedItems.indexOf(itemName), 1)
-  console.log(selectedItems)
+
+  // Update the cookie
+  localStorage.removeItem(allItemNames[itemName])
 
   // Regenerate the list of required components
   updateSelectedItemComponents()
@@ -83,9 +80,25 @@ function toggleItem(itemName) {
   }
 }
 
-// addItem("Baza")
-// addItem("Battacor")
-// addItem("Acceltra")
-// removeItem("Baza")
+// Update the button element to pressed and update the list of components
+function selectItem(itemName) {
+  button = document.querySelector("#" + allItemNames[itemName])
+  button.classList.remove("active")
+  addItem(itemName)
+}
 
-// console.log(itemComponents["Acceltra"][0].name)
+// Populate the selections from the cookies
+function loadSelectionsFromCookies() {
+  Object.keys(allItemNames).forEach(itemName => {
+    itemNameSafe = allItemNames[itemName]
+    itemCookie = localStorage.getItem(itemNameSafe)
+    if (itemCookie != null) {
+      if (itemCookie == "selected") {
+        selectItem(itemName)
+      }
+    }
+  })
+}
+
+
+loadSelectionsFromCookies()
