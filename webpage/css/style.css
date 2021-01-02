@@ -5,5 +5,31 @@ body {
 
 .btn-secondary {
   color: rgb(197, 197, 197);
-  background-color: #7eaa7e;
+  background-color: #c4c4c4;
+}
+
+.nameplate {
+  background-color: rgb(255, 255, 255);
+  color: rgb(43, 43, 43);
+  width: 100%;
+  /* margin: 0; */
+}
+
+.item-box {
+  padding: 0;
+  border: rgb(41, 41, 41);
+  border-radius: 0;
+  border-width: 2px;
+  border-style: solid;
+}
+
+.active .item-image {
+  opacity: 1;
+}
+
+.item-image {
+  width: 90%;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  opacity: 0.5;
 }

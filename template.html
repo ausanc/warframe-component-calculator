@@ -36,15 +36,17 @@
           {% for category in category_data %}
           <div class="tab-pane fade show {% if loop.first %}active{% endif %}" id="{{ category.name }}" role="tabpanel">
 
-            <div class="row">
+            <div class="row no-gutters">
               {% for item_name in category.item_info %}
 
-              <div class="col-md-3 mt-1">
-                <button type="button" class="btn btn-secondary btn-block active" data-toggle="button" id="{{ item_name[2] }}" autocomplete="off" onclick="toggleItem('{{ item_name[0] }}')">
-                  <img src="img/{{ item_name[1] }}" alt="" width="100%">
+              <div class="col-md-3 mt-2">
+                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="{{ item_name[2] }}" autocomplete="off" onclick="toggleItem('{{ item_name[0] }}')">
+                  <img class="item-image" src="img/{{ item_name[1] }}" alt="" width="100%">
                   <br>
-                  {{ item_name[0] }}
-                </button>
+                  <div class="nameplate">
+                    {{ item_name[0] }}
+                  </div>
+                </div>
               </div>
               
               {% endfor %}
