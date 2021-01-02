@@ -5,7 +5,11 @@ body {
 
 .btn-secondary {
   color: rgb(197, 197, 197);
-  background-color: #c4c4c4;
+  background-color: #9eb8c2;
+}
+
+.btn-secondary:hover {
+  background-color: #9eb8c2;
 }
 
 .nameplate {

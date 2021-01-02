@@ -6,6 +6,8 @@ var selectedItems = []
 
 var selectedItemsComponents = {}
 
+ignoredComponents = ["Akbolto", "Akstiletto", "Amphis", "Ankyros", "Atomos", "Barrel", "Barrels", "Blade", "Blades", "Blueprint", "Bo", "Bolto", "Boltor", "Boot", "Broken War", "Bronco Prime", "Bronco", "Carapace", "Cerebrum", "Cernos", "Cestra", "Chain", "Chassis", "Core", "Cortege Barrel", "Cortege Receiver", "Cortege Stock", "Decurion Barrel", "Decurion Receiver", "Detonite Injector", "Disc", "Drakgoon", "Dual Cleavers", "Dual Kamas", "Dual Skana", "Dual Zoren", "Furis", "Galatine", "Gammacor", "Gauntlet", "Grakata", "Grip", "Guard", "Handle", "Head", "Heatsink", "Hikou", "Hilt", "Kama", "Kogake", "Kohmak", "Kraken", "Krohkur", "Kronen", "Kunai", "Lato", "Latron", "Left Gauntlet", "Lex Prime", "Lex", "Limbs", "Link", "Lower Limb", "Magistar", "Magnus", "Miter", "Morgha Barrel", "Morgha Receiver", "Morgha Stock", "Motor", "Mutalist Cernos", "Nikana", "Ninkondi", "Ornament", "Pouch", "Receiver", "Receivers", "Right Gauntlet", "Rivet", "Stars", "Stock", "String", "Subcortex", "Systems", "Tipedo", "Upper Limb", "Vasto Prime", "Vasto", "Viper", "War Blade", "War Hilt"]
+
 /**
  * 
  */
@@ -20,10 +22,13 @@ function updateSelectedItemComponents() {
 
     // For each component, update the count in selectedItemComponents
     components.forEach(component => {
-      if (component.name in selectedItemsComponents) {
-        selectedItemsComponents[component.name] += component.itemCount
-      } else {
-        selectedItemsComponents[component.name] = component.itemCount
+      // If component not in ignored components, update the summed costs
+      if (!ignoredComponents.includes(component.name)) {
+        if (component.name in selectedItemsComponents) {
+          selectedItemsComponents[component.name] += component.itemCount
+        } else {
+          selectedItemsComponents[component.name] = component.itemCount
+        }
       }
     });
   });
@@ -111,6 +116,7 @@ function loadSelectionsFromCookies() {
 }
 
 function selectAllItems() {
+  selectedItems = []
   Object.keys(allItemNames).forEach(itemName => {
     selectItem(itemName)
   })
