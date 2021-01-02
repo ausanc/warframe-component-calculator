@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Warframe Components Calculator</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="container">
+
+    <div class="text-center mt-2">
+      <h4>Warframe Component Cost Calculator</h4>
+    </div>
+    <hr>
+    
+    <button class="btn btn-info" onclick="selectAllItems()">Select All</button>
+    <button class="btn btn-info" onclick="deselectAllItems()">Deselect All</button>
+
+    <div class="row">
+      <div class="col-md-9">
+
+        <ul class="nav nav-tabs" role="tablist">
+          {% for category in category_data %}
+          <li class="nav-item">
+            <a class="nav-link {% if loop.first %}active{% endif %}" data-toggle="tab" href="#{{ category.name }}" role="tab">{{ category.name }}</a>
+          </li>
+          {% endfor %}
+        </ul>
+
+        <div class="tab-content">
+
+          {% for category in category_data %}
+          <div class="tab-pane fade show {% if loop.first %}active{% endif %}" id="{{ category.name }}" role="tabpanel">
+
+            <div class="row no-gutters">
+              {% for item_name in category.item_info %}
+
+              <div class="col-md-3 mt-2">
+                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="{{ item_name[2] }}" autocomplete="off" onclick="toggleItem('{{ item_name[0] }}')">
+                  <img class="item-image" src="img/{{ item_name[1] }}" alt="" width="100%">
+                  <br>
+                  <div class="nameplate">
+                    {{ item_name[0] }}
+                  </div>
+                </div>
+              </div>
+              
+              {% endfor %}
+            </div>
+
+          </div>
+          {% endfor %}
+
+        </div>
+        
+
+      </div>
+
+      <div class="col-md-3">
+        <div id="componentListContainer">
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./js/item-components.js"></script>
+  <script src="./js/all-item-names.js"></script>
+  <script src="./js/component-list.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
