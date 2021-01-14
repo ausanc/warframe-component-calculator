@@ -37,3 +37,16 @@ body {
   margin-bottom: 1em;
   opacity: 0.5;
 }
+
+.nav-tabs {
+  width: 100%;
+}
+
+.navbar-dark {
+  color: white;
+  background-color: #343c3f;
+}
+
+/* #main-content {
+  padding-top: 65px;
+} */
