@@ -20,11 +20,11 @@
     <p class="alert alert-info">This calculator lists the required components to build the selected items. Only items which are built in the foundry are listed, so things like weapons purchased from Baro are not listed here. Please note that parts such as a Warframe's chassis / systems / neuroptics are not listed individually, instead the cost of each of these sub-components is included in the parent item's costs. This also applies to weapons which use another weapon in their recipe. This tool is intended to be used by scrolling through your codex (sort by rank) and selecting items which have not yet been mastered / made. Note that this is why arch-guns are listed under Primary, arch-melee under Melee, and archwings under Warframes; they are sorted like this in the codex.</p>
     <hr>
     
-    <button class="btn btn-info mb-1" onclick="selectAllItems()">Select All</button>
-    <button class="btn btn-info mb-1" onclick="deselectAllItems()">Deselect All</button>
-
     <div class="row">
       <div class="col-md-9">
+
+        <button class="btn btn-info mb-1" onclick="selectAllItems()">Select All</button>
+        <button class="btn btn-info mb-1" onclick="deselectAllItems()">Deselect All</button>
 
         <ul class="nav nav-tabs" role="tablist">
           {% for category in category_data %}
