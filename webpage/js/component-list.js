@@ -6,7 +6,7 @@ var selectedItems = []
 
 var selectedItemsComponents = {}
 
-ignoredComponents = ["Akbolto", "Akstiletto", "Amphis", "Ankyros", "Atomos", "Barrel", "Barrels", "Blade", "Blades", "Blueprint", "Bo", "Bolto", "Boltor", "Boot", "Broken War", "Bronco Prime", "Bronco", "Carapace", "Cerebrum", "Cernos", "Cestra", "Chain", "Chassis", "Core", "Cortege Barrel", "Cortege Receiver", "Cortege Stock", "Decurion Barrel", "Decurion Receiver", "Detonite Injector", "Disc", "Drakgoon", "Dual Cleavers", "Dual Kamas", "Dual Skana", "Dual Zoren", "Furis", "Galatine", "Gammacor", "Gauntlet", "Grakata", "Grip", "Guard", "Handle", "Head", "Heatsink", "Hikou", "Hilt", "Kama", "Kogake", "Kohmak", "Kraken", "Krohkur", "Kronen", "Kunai", "Lato", "Latron", "Left Gauntlet", "Lex Prime", "Lex", "Limbs", "Link", "Lower Limb", "Magistar", "Magnus", "Miter", "Morgha Barrel", "Morgha Receiver", "Morgha Stock", "Motor", "Mutalist Cernos", "Nikana", "Ninkondi", "Ornament", "Pouch", "Receiver", "Receivers", "Right Gauntlet", "Rivet", "Stars", "Stock", "String", "Subcortex", "Systems", "Tipedo", "Upper Limb", "Vasto Prime", "Vasto", "Viper", "War Blade", "War Hilt"]
+ignoredComponents = ["Akbolto", "Akstiletto", "Amphis", "Ankyros", "Atomos", "Barrel", "Barrels", "Blade", "Blades", "Blueprint", "Bo", "Bolto", "Boltor", "Bonewidow Capsule", "Bonewidow Casing", "Bonewidow Engine", "Bonewidow Weapon Pod", "Boot", "Broken War", "Bronco Prime", "Bronco", "Carapace", "Cerebrum", "Cernos", "Cestra", "Chain", "Chassis", "Core", "Cortege Barrel", "Cortege Receiver", "Cortege Stock", "Decurion Barrel", "Decurion Receiver", "Disc", "Drakgoon", "Dual Cleavers", "Dual Kamas", "Dual Skana", "Dual Zoren", "Furis", "Galatine", "Gammacor", "Gauntlet", "Grakata", "Grip", "Guard", "Handle", "Harness", "Head", "Heatsink", "Hikou", "Hilt", "Kama", "Kogake", "Kohmak", "Kraken", "Krohkur", "Kronen", "Kunai", "Lato", "Latron", "Left Gauntlet", "Lex Prime", "Lex", "Limbs", "Link", "Lower Limb", "Magistar", "Magnus", "Miter", "Morgha Barrel", "Morgha Receiver", "Morgha Stock", "Motor", "Mutalist Cernos", "Neuroptics", "Nikana", "Ninkondi", "Ornament", "Pouch", "Receiver", "Receivers", "Right Gauntlet", "Rivet", "Stars", "Stock", "String", "Subcortex", "Systems", "Tipedo", "Upper Limb", "Vasto Prime", "Vasto", "Viper", "Voidrig Capsule", "Voidrig Casing", "Voidrig Engine", "Voidrig Weapon Pod", "War Blade", "War Hilt", "Wings"]
 
 /**
  * 
@@ -41,18 +41,24 @@ function updateSelectedItemComponents() {
  * Refresh the on-page list of required components.
  */
 function updateComponentListDisplay() {
-  // Get the component list container, then reset it
-  var componentListContainer = document.getElementById("componentListContainer")
-  componentListContainer.innerHTML = ""
-
-  selectedItemsComponentsArray = Object.entries(selectedItemsComponents)
+  // Convert selectedItemsComponents to an array then sort it alphabetically
+  var selectedItemsComponentsArray = Object.entries(selectedItemsComponents)
   selectedItemsComponentsArray.sort()
 
+  // Get the component list container and start the string which will be placed into it
+  var componentListContainer = document.getElementById("componentListContainer")
+  var newHTML = "<p>"
+  
+  // For each component we want listed, append the name and quantity to the newHTML string 
   selectedItemsComponentsArray.forEach(component => {
     var current = componentListContainer.innerHTML
-    var resourceHTML = `<p>${component[0]}: ${component[1]}</p>`
-    componentListContainer.innerHTML = current + resourceHTML
+    var resourceHTML = `${component[0]}: ${component[1]}<br>`
+    newHTML = newHTML + resourceHTML
   });
+
+  // Finish the newHTML string and set the component list's contents to it
+  newHTML += "</p>"
+  componentListContainer.innerHTML = newHTML
 }
 
 function addItem(itemName) {
