@@ -14,13 +14,14 @@
 
     <div class="text-center mt-2">
       <h4>Warframe Component Cost Calculator</h4>
+      <h6><em>Tool version 1.0 for Warframe version 29.6 Orphix Venom</em></h6>
     </div>
-    <p class="alert alert-warning">This page uses cookies to store which items you have selected, and nothing else.</p>
-    <p class="alert alert-info">This calculator lists the required components to build the selected items. Only items which are built in the foundry are listed, so things like weapons purchased from Baro are not listed here. Please note that parts such as a Warframe's chassis / systems / neuroptics are not listed individually, instead the cost of each of these sub-components is included in the parent item's costs. This also applies to weapons which use another weapon in their recipe. This tool is intended to be used by scrolling through your codex and selecting items which have not yet been mastered (and are not currently being built in your foundry).</p>
+    <p class="alert alert-warning">This page uses cookies to store which items you have selected.</p>
+    <p class="alert alert-info">This calculator lists the required components to build the selected items. Only items which are built in the foundry are listed, so things like weapons purchased from Baro are not listed here. Please note that parts such as a Warframe's chassis / systems / neuroptics are not listed individually, instead the cost of each of these sub-components is included in the parent item's costs. This also applies to weapons which use another weapon in their recipe. This tool is intended to be used by scrolling through your codex (sort by rank) and selecting items which have not yet been mastered / made. Note that this is why arch-guns are listed under Primary, arch-melee under Melee, and archwings under Warframes; they are sorted like this in the codex.</p>
     <hr>
     
-    <button class="btn btn-info" onclick="selectAllItems()">Select All</button>
-    <button class="btn btn-info" onclick="deselectAllItems()">Deselect All</button>
+    <button class="btn btn-info mb-1" onclick="selectAllItems()">Select All</button>
+    <button class="btn btn-info mb-1" onclick="deselectAllItems()">Deselect All</button>
 
     <div class="row">
       <div class="col-md-9">
@@ -40,20 +41,16 @@
           </li>
           
           <li class="nav-item">
+            <a class="nav-link " data-toggle="tab" href="#Warframes & Vehicles" role="tab">Warframes & Vehicles</a>
+          </li>
+          
+          <li class="nav-item">
             <a class="nav-link " data-toggle="tab" href="#Sentinels" role="tab">Sentinels</a>
-          </li>
-          
-          <li class="nav-item">
-            <a class="nav-link " data-toggle="tab" href="#Warframes" role="tab">Warframes</a>
-          </li>
-          
-          <li class="nav-item">
-            <a class="nav-link " data-toggle="tab" href="#Archwings" role="tab">Archwings</a>
           </li>
           
         </ul>
 
-        <div class="tab-content">
+        <div class="tab-content mb-3">
 
           
           <div class="tab-pane fade show active" id="Primary" role="tabpanel">
@@ -386,11 +383,23 @@
               
 
               <div class="col-md-3 mt-2">
-                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="cryotra" autocomplete="off" onclick="toggleItem('Cryotra')">
-                  <img class="item-image" src="img/cryotra.png" alt="" width="100%">
+                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="corvas" autocomplete="off" onclick="toggleItem('Corvas')">
+                  <img class="item-image" src="img/corvas.png" alt="" width="100%">
                   <br>
                   <div class="nameplate">
-                    Cryotra
+                    Corvas
+                  </div>
+                </div>
+              </div>
+              
+              
+
+              <div class="col-md-3 mt-2">
+                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="cyngas" autocomplete="off" onclick="toggleItem('Cyngas')">
+                  <img class="item-image" src="img/cyngas.png" alt="" width="100%">
+                  <br>
+                  <div class="nameplate">
+                    Cyngas
                   </div>
                 </div>
               </div>
@@ -458,6 +467,18 @@
               
 
               <div class="col-md-3 mt-2">
+                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="dual-decurion" autocomplete="off" onclick="toggleItem('Dual Decurion')">
+                  <img class="item-image" src="img/dual-decurion.png" alt="" width="100%">
+                  <br>
+                  <div class="nameplate">
+                    Dual Decurion
+                  </div>
+                </div>
+              </div>
+              
+              
+
+              <div class="col-md-3 mt-2">
                 <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="exergis" autocomplete="off" onclick="toggleItem('Exergis')">
                   <img class="item-image" src="img/exergis.png" alt="" width="100%">
                   <br>
@@ -475,6 +496,18 @@
                   <br>
                   <div class="nameplate">
                     Ferrox
+                  </div>
+                </div>
+              </div>
+              
+              
+
+              <div class="col-md-3 mt-2">
+                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="fluctus" autocomplete="off" onclick="toggleItem('Fluctus')">
+                  <img class="item-image" src="img/fluctus.png" alt="" width="100%">
+                  <br>
+                  <div class="nameplate">
+                    Fluctus
                   </div>
                 </div>
               </div>
@@ -554,6 +587,18 @@
               
 
               <div class="col-md-3 mt-2">
+                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="grattler" autocomplete="off" onclick="toggleItem('Grattler')">
+                  <img class="item-image" src="img/grattler.png" alt="" width="100%">
+                  <br>
+                  <div class="nameplate">
+                    Grattler
+                  </div>
+                </div>
+              </div>
+              
+              
+
+              <div class="col-md-3 mt-2">
                 <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="grinlok" autocomplete="off" onclick="toggleItem('Grinlok')">
                   <img class="item-image" src="img/grinlok.png" alt="" width="100%">
                   <br>
@@ -583,18 +628,6 @@
                   <br>
                   <div class="nameplate">
                     Hek
-                  </div>
-                </div>
-              </div>
-              
-              
-
-              <div class="col-md-3 mt-2">
-                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="helstrum" autocomplete="off" onclick="toggleItem('Helstrum')">
-                  <img class="item-image" src="img/helstrum.png" alt="" width="100%">
-                  <br>
-                  <div class="nameplate">
-                    Helstrum
                   </div>
                 </div>
               </div>
@@ -643,6 +676,30 @@
                   <br>
                   <div class="nameplate">
                     Ignis Wraith
+                  </div>
+                </div>
+              </div>
+              
+              
+
+              <div class="col-md-3 mt-2">
+                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="imperator" autocomplete="off" onclick="toggleItem('Imperator')">
+                  <img class="item-image" src="img/imperator.png" alt="" width="100%">
+                  <br>
+                  <div class="nameplate">
+                    Imperator
+                  </div>
+                </div>
+              </div>
+              
+              
+
+              <div class="col-md-3 mt-2">
+                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="imperator-vandal" autocomplete="off" onclick="toggleItem('Imperator Vandal')">
+                  <img class="item-image" src="img/imperator-vandal.png" alt="" width="100%">
+                  <br>
+                  <div class="nameplate">
+                    Imperator Vandal
                   </div>
                 </div>
               </div>
@@ -710,131 +767,23 @@
               
 
               <div class="col-md-3 mt-2">
-                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="kuva-ayanga" autocomplete="off" onclick="toggleItem('Kuva Ayanga')">
-                  <img class="item-image" src="img/kuva-ayanga.png" alt="" width="100%">
-                  <br>
-                  <div class="nameplate">
-                    Kuva Ayanga
-                  </div>
-                </div>
-              </div>
-              
-              
-
-              <div class="col-md-3 mt-2">
-                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="kuva-bramma" autocomplete="off" onclick="toggleItem('Kuva Bramma')">
-                  <img class="item-image" src="img/kuva-bramma.png" alt="" width="100%">
-                  <br>
-                  <div class="nameplate">
-                    Kuva Bramma
-                  </div>
-                </div>
-              </div>
-              
-              
-
-              <div class="col-md-3 mt-2">
-                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="kuva-chakkhurr" autocomplete="off" onclick="toggleItem('Kuva Chakkhurr')">
-                  <img class="item-image" src="img/kuva-chakkhurr.png" alt="" width="100%">
-                  <br>
-                  <div class="nameplate">
-                    Kuva Chakkhurr
-                  </div>
-                </div>
-              </div>
-              
-              
-
-              <div class="col-md-3 mt-2">
-                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="kuva-drakgoon" autocomplete="off" onclick="toggleItem('Kuva Drakgoon')">
-                  <img class="item-image" src="img/kuva-drakgoon.png" alt="" width="100%">
-                  <br>
-                  <div class="nameplate">
-                    Kuva Drakgoon
-                  </div>
-                </div>
-              </div>
-              
-              
-
-              <div class="col-md-3 mt-2">
-                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="kuva-hind" autocomplete="off" onclick="toggleItem('Kuva Hind')">
-                  <img class="item-image" src="img/kuva-hind.png" alt="" width="100%">
-                  <br>
-                  <div class="nameplate">
-                    Kuva Hind
-                  </div>
-                </div>
-              </div>
-              
-              
-
-              <div class="col-md-3 mt-2">
-                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="kuva-karak" autocomplete="off" onclick="toggleItem('Kuva Karak')">
-                  <img class="item-image" src="img/kuva-karak.png" alt="" width="100%">
-                  <br>
-                  <div class="nameplate">
-                    Kuva Karak
-                  </div>
-                </div>
-              </div>
-              
-              
-
-              <div class="col-md-3 mt-2">
-                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="kuva-kohm" autocomplete="off" onclick="toggleItem('Kuva Kohm')">
-                  <img class="item-image" src="img/kuva-kohm.png" alt="" width="100%">
-                  <br>
-                  <div class="nameplate">
-                    Kuva Kohm
-                  </div>
-                </div>
-              </div>
-              
-              
-
-              <div class="col-md-3 mt-2">
-                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="kuva-ogris" autocomplete="off" onclick="toggleItem('Kuva Ogris')">
-                  <img class="item-image" src="img/kuva-ogris.png" alt="" width="100%">
-                  <br>
-                  <div class="nameplate">
-                    Kuva Ogris
-                  </div>
-                </div>
-              </div>
-              
-              
-
-              <div class="col-md-3 mt-2">
-                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="kuva-quartakk" autocomplete="off" onclick="toggleItem('Kuva Quartakk')">
-                  <img class="item-image" src="img/kuva-quartakk.png" alt="" width="100%">
-                  <br>
-                  <div class="nameplate">
-                    Kuva Quartakk
-                  </div>
-                </div>
-              </div>
-              
-              
-
-              <div class="col-md-3 mt-2">
-                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="kuva-tonkor" autocomplete="off" onclick="toggleItem('Kuva Tonkor')">
-                  <img class="item-image" src="img/kuva-tonkor.png" alt="" width="100%">
-                  <br>
-                  <div class="nameplate">
-                    Kuva Tonkor
-                  </div>
-                </div>
-              </div>
-              
-              
-
-              <div class="col-md-3 mt-2">
                 <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="lanka" autocomplete="off" onclick="toggleItem('Lanka')">
                   <img class="item-image" src="img/lanka.png" alt="" width="100%">
                   <br>
                   <div class="nameplate">
                     Lanka
+                  </div>
+                </div>
+              </div>
+              
+              
+
+              <div class="col-md-3 mt-2">
+                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="larkspur" autocomplete="off" onclick="toggleItem('Larkspur')">
+                  <img class="item-image" src="img/larkspur.png" alt="" width="100%">
+                  <br>
+                  <div class="nameplate">
+                    Larkspur
                   </div>
                 </div>
               </div>
@@ -1039,6 +988,18 @@
                   <br>
                   <div class="nameplate">
                     Penta
+                  </div>
+                </div>
+              </div>
+              
+              
+
+              <div class="col-md-3 mt-2">
+                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="phaedra" autocomplete="off" onclick="toggleItem('Phaedra')">
+                  <img class="item-image" src="img/phaedra.png" alt="" width="100%">
+                  <br>
+                  <div class="nameplate">
+                    Phaedra
                   </div>
                 </div>
               </div>
@@ -1346,18 +1307,6 @@
               
 
               <div class="col-md-3 mt-2">
-                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="tazicor" autocomplete="off" onclick="toggleItem('Tazicor')">
-                  <img class="item-image" src="img/tazicor.png" alt="" width="100%">
-                  <br>
-                  <div class="nameplate">
-                    Tazicor
-                  </div>
-                </div>
-              </div>
-              
-              
-
-              <div class="col-md-3 mt-2">
                 <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="tenora" autocomplete="off" onclick="toggleItem('Tenora')">
                   <img class="item-image" src="img/tenora.png" alt="" width="100%">
                   <br>
@@ -1502,11 +1451,11 @@
               
 
               <div class="col-md-3 mt-2">
-                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="vulcax" autocomplete="off" onclick="toggleItem('Vulcax')">
-                  <img class="item-image" src="img/vulcax.png" alt="" width="100%">
+                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="velocitus" autocomplete="off" onclick="toggleItem('Velocitus')">
+                  <img class="item-image" src="img/velocitus.png" alt="" width="100%">
                   <br>
                   <div class="nameplate">
-                    Vulcax
+                    Velocitus
                   </div>
                 </div>
               </div>
@@ -2187,66 +2136,6 @@
                   <br>
                   <div class="nameplate">
                     Kunai
-                  </div>
-                </div>
-              </div>
-              
-              
-
-              <div class="col-md-3 mt-2">
-                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="kuva-brakk" autocomplete="off" onclick="toggleItem('Kuva Brakk')">
-                  <img class="item-image" src="img/kuva-brakk.png" alt="" width="100%">
-                  <br>
-                  <div class="nameplate">
-                    Kuva Brakk
-                  </div>
-                </div>
-              </div>
-              
-              
-
-              <div class="col-md-3 mt-2">
-                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="kuva-kraken" autocomplete="off" onclick="toggleItem('Kuva Kraken')">
-                  <img class="item-image" src="img/kuva-kraken.png" alt="" width="100%">
-                  <br>
-                  <div class="nameplate">
-                    Kuva Kraken
-                  </div>
-                </div>
-              </div>
-              
-              
-
-              <div class="col-md-3 mt-2">
-                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="kuva-nukor" autocomplete="off" onclick="toggleItem('Kuva Nukor')">
-                  <img class="item-image" src="img/kuva-nukor.png" alt="" width="100%">
-                  <br>
-                  <div class="nameplate">
-                    Kuva Nukor
-                  </div>
-                </div>
-              </div>
-              
-              
-
-              <div class="col-md-3 mt-2">
-                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="kuva-seer" autocomplete="off" onclick="toggleItem('Kuva Seer')">
-                  <img class="item-image" src="img/kuva-seer.png" alt="" width="100%">
-                  <br>
-                  <div class="nameplate">
-                    Kuva Seer
-                  </div>
-                </div>
-              </div>
-              
-              
-
-              <div class="col-md-3 mt-2">
-                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="kuva-twin-stubbas" autocomplete="off" onclick="toggleItem('Kuva Twin Stubbas')">
-                  <img class="item-image" src="img/kuva-twin-stubbas.png" alt="" width="100%">
-                  <br>
-                  <div class="nameplate">
-                    Kuva Twin Stubbas
                   </div>
                 </div>
               </div>
@@ -3690,18 +3579,6 @@
               
 
               <div class="col-md-3 mt-2">
-                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="kuva-shildeg" autocomplete="off" onclick="toggleItem('Kuva Shildeg')">
-                  <img class="item-image" src="img/kuva-shildeg.png" alt="" width="100%">
-                  <br>
-                  <div class="nameplate">
-                    Kuva Shildeg
-                  </div>
-                </div>
-              </div>
-              
-              
-
-              <div class="col-md-3 mt-2">
                 <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="lacera" autocomplete="off" onclick="toggleItem('Lacera')">
                   <img class="item-image" src="img/lacera.png" alt="" width="100%">
                   <br>
@@ -4492,21 +4369,13 @@
               </div>
               
               
-            </div>
-
-          </div>
-          
-          <div class="tab-pane fade show " id="Sentinels" role="tabpanel">
-
-            <div class="row no-gutters">
-              
 
               <div class="col-md-3 mt-2">
-                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="carrier" autocomplete="off" onclick="toggleItem('Carrier')">
-                  <img class="item-image" src="img/carrier.png" alt="" width="100%">
+                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="agkuza" autocomplete="off" onclick="toggleItem('Agkuza')">
+                  <img class="item-image" src="img/agkuza.png" alt="" width="100%">
                   <br>
                   <div class="nameplate">
-                    Carrier
+                    Agkuza
                   </div>
                 </div>
               </div>
@@ -4514,11 +4383,11 @@
               
 
               <div class="col-md-3 mt-2">
-                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="carrier-prime" autocomplete="off" onclick="toggleItem('Carrier Prime')">
-                  <img class="item-image" src="img/carrier-prime.png" alt="" width="100%">
+                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="centaur" autocomplete="off" onclick="toggleItem('Centaur')">
+                  <img class="item-image" src="img/centaur.png" alt="" width="100%">
                   <br>
                   <div class="nameplate">
-                    Carrier Prime
+                    Centaur
                   </div>
                 </div>
               </div>
@@ -4526,11 +4395,11 @@
               
 
               <div class="col-md-3 mt-2">
-                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="dethcube" autocomplete="off" onclick="toggleItem('Dethcube')">
-                  <img class="item-image" src="img/dethcube.png" alt="" width="100%">
+                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="kaszas" autocomplete="off" onclick="toggleItem('Kaszas')">
+                  <img class="item-image" src="img/kaszas.png" alt="" width="100%">
                   <br>
                   <div class="nameplate">
-                    Dethcube
+                    Kaszas
                   </div>
                 </div>
               </div>
@@ -4538,11 +4407,11 @@
               
 
               <div class="col-md-3 mt-2">
-                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="dethcube-prime" autocomplete="off" onclick="toggleItem('Dethcube Prime')">
-                  <img class="item-image" src="img/dethcube-prime.png" alt="" width="100%">
+                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="knux" autocomplete="off" onclick="toggleItem('Knux')">
+                  <img class="item-image" src="img/knux.png" alt="" width="100%">
                   <br>
                   <div class="nameplate">
-                    Dethcube Prime
+                    Knux
                   </div>
                 </div>
               </div>
@@ -4550,11 +4419,11 @@
               
 
               <div class="col-md-3 mt-2">
-                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="diriga" autocomplete="off" onclick="toggleItem('Diriga')">
-                  <img class="item-image" src="img/diriga.png" alt="" width="100%">
+                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="onorix" autocomplete="off" onclick="toggleItem('Onorix')">
+                  <img class="item-image" src="img/onorix.png" alt="" width="100%">
                   <br>
                   <div class="nameplate">
-                    Diriga
+                    Onorix
                   </div>
                 </div>
               </div>
@@ -4562,11 +4431,11 @@
               
 
               <div class="col-md-3 mt-2">
-                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="djinn" autocomplete="off" onclick="toggleItem('Djinn')">
-                  <img class="item-image" src="img/djinn.png" alt="" width="100%">
+                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="rathbone" autocomplete="off" onclick="toggleItem('Rathbone')">
+                  <img class="item-image" src="img/rathbone.png" alt="" width="100%">
                   <br>
                   <div class="nameplate">
-                    Djinn
+                    Rathbone
                   </div>
                 </div>
               </div>
@@ -4574,83 +4443,11 @@
               
 
               <div class="col-md-3 mt-2">
-                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="helios" autocomplete="off" onclick="toggleItem('Helios')">
-                  <img class="item-image" src="img/helios.png" alt="" width="100%">
+                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="veritux" autocomplete="off" onclick="toggleItem('Veritux')">
+                  <img class="item-image" src="img/veritux.png" alt="" width="100%">
                   <br>
                   <div class="nameplate">
-                    Helios
-                  </div>
-                </div>
-              </div>
-              
-              
-
-              <div class="col-md-3 mt-2">
-                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="helios-prime" autocomplete="off" onclick="toggleItem('Helios Prime')">
-                  <img class="item-image" src="img/helios-prime.png" alt="" width="100%">
-                  <br>
-                  <div class="nameplate">
-                    Helios Prime
-                  </div>
-                </div>
-              </div>
-              
-              
-
-              <div class="col-md-3 mt-2">
-                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="oxylus" autocomplete="off" onclick="toggleItem('Oxylus')">
-                  <img class="item-image" src="img/oxylus.png" alt="" width="100%">
-                  <br>
-                  <div class="nameplate">
-                    Oxylus
-                  </div>
-                </div>
-              </div>
-              
-              
-
-              <div class="col-md-3 mt-2">
-                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="shade" autocomplete="off" onclick="toggleItem('Shade')">
-                  <img class="item-image" src="img/shade.png" alt="" width="100%">
-                  <br>
-                  <div class="nameplate">
-                    Shade
-                  </div>
-                </div>
-              </div>
-              
-              
-
-              <div class="col-md-3 mt-2">
-                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="taxon" autocomplete="off" onclick="toggleItem('Taxon')">
-                  <img class="item-image" src="img/taxon.png" alt="" width="100%">
-                  <br>
-                  <div class="nameplate">
-                    Taxon
-                  </div>
-                </div>
-              </div>
-              
-              
-
-              <div class="col-md-3 mt-2">
-                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="wyrm" autocomplete="off" onclick="toggleItem('Wyrm')">
-                  <img class="item-image" src="img/wyrm.png" alt="" width="100%">
-                  <br>
-                  <div class="nameplate">
-                    Wyrm
-                  </div>
-                </div>
-              </div>
-              
-              
-
-              <div class="col-md-3 mt-2">
-                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="wyrm-prime" autocomplete="off" onclick="toggleItem('Wyrm Prime')">
-                  <img class="item-image" src="img/wyrm-prime.png" alt="" width="100%">
-                  <br>
-                  <div class="nameplate">
-                    Wyrm Prime
+                    Veritux
                   </div>
                 </div>
               </div>
@@ -4660,7 +4457,7 @@
 
           </div>
           
-          <div class="tab-pane fade show " id="Warframes" role="tabpanel">
+          <div class="tab-pane fade show " id="Warframes & Vehicles" role="tabpanel">
 
             <div class="row no-gutters">
               
@@ -5588,14 +5385,6 @@
               </div>
               
               
-            </div>
-
-          </div>
-          
-          <div class="tab-pane fade show " id="Archwings" role="tabpanel">
-
-            <div class="row no-gutters">
-              
 
               <div class="col-md-3 mt-2">
                 <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="amesha" autocomplete="off" onclick="toggleItem('Amesha')">
@@ -5656,13 +5445,21 @@
               </div>
               
               
+            </div>
+
+          </div>
+          
+          <div class="tab-pane fade show " id="Sentinels" role="tabpanel">
+
+            <div class="row no-gutters">
+              
 
               <div class="col-md-3 mt-2">
-                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="corvas" autocomplete="off" onclick="toggleItem('Corvas')">
-                  <img class="item-image" src="img/corvas.png" alt="" width="100%">
+                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="carrier" autocomplete="off" onclick="toggleItem('Carrier')">
+                  <img class="item-image" src="img/carrier.png" alt="" width="100%">
                   <br>
                   <div class="nameplate">
-                    Corvas
+                    Carrier
                   </div>
                 </div>
               </div>
@@ -5670,11 +5467,11 @@
               
 
               <div class="col-md-3 mt-2">
-                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="cyngas" autocomplete="off" onclick="toggleItem('Cyngas')">
-                  <img class="item-image" src="img/cyngas.png" alt="" width="100%">
+                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="carrier-prime" autocomplete="off" onclick="toggleItem('Carrier Prime')">
+                  <img class="item-image" src="img/carrier-prime.png" alt="" width="100%">
                   <br>
                   <div class="nameplate">
-                    Cyngas
+                    Carrier Prime
                   </div>
                 </div>
               </div>
@@ -5682,11 +5479,11 @@
               
 
               <div class="col-md-3 mt-2">
-                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="dual-decurion" autocomplete="off" onclick="toggleItem('Dual Decurion')">
-                  <img class="item-image" src="img/dual-decurion.png" alt="" width="100%">
+                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="dethcube" autocomplete="off" onclick="toggleItem('Dethcube')">
+                  <img class="item-image" src="img/dethcube.png" alt="" width="100%">
                   <br>
                   <div class="nameplate">
-                    Dual Decurion
+                    Dethcube
                   </div>
                 </div>
               </div>
@@ -5694,11 +5491,11 @@
               
 
               <div class="col-md-3 mt-2">
-                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="fluctus" autocomplete="off" onclick="toggleItem('Fluctus')">
-                  <img class="item-image" src="img/fluctus.png" alt="" width="100%">
+                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="dethcube-prime" autocomplete="off" onclick="toggleItem('Dethcube Prime')">
+                  <img class="item-image" src="img/dethcube-prime.png" alt="" width="100%">
                   <br>
                   <div class="nameplate">
-                    Fluctus
+                    Dethcube Prime
                   </div>
                 </div>
               </div>
@@ -5706,11 +5503,11 @@
               
 
               <div class="col-md-3 mt-2">
-                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="grattler" autocomplete="off" onclick="toggleItem('Grattler')">
-                  <img class="item-image" src="img/grattler.png" alt="" width="100%">
+                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="diriga" autocomplete="off" onclick="toggleItem('Diriga')">
+                  <img class="item-image" src="img/diriga.png" alt="" width="100%">
                   <br>
                   <div class="nameplate">
-                    Grattler
+                    Diriga
                   </div>
                 </div>
               </div>
@@ -5718,11 +5515,11 @@
               
 
               <div class="col-md-3 mt-2">
-                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="imperator" autocomplete="off" onclick="toggleItem('Imperator')">
-                  <img class="item-image" src="img/imperator.png" alt="" width="100%">
+                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="djinn" autocomplete="off" onclick="toggleItem('Djinn')">
+                  <img class="item-image" src="img/djinn.png" alt="" width="100%">
                   <br>
                   <div class="nameplate">
-                    Imperator
+                    Djinn
                   </div>
                 </div>
               </div>
@@ -5730,11 +5527,11 @@
               
 
               <div class="col-md-3 mt-2">
-                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="imperator-vandal" autocomplete="off" onclick="toggleItem('Imperator Vandal')">
-                  <img class="item-image" src="img/imperator-vandal.png" alt="" width="100%">
+                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="helios" autocomplete="off" onclick="toggleItem('Helios')">
+                  <img class="item-image" src="img/helios.png" alt="" width="100%">
                   <br>
                   <div class="nameplate">
-                    Imperator Vandal
+                    Helios
                   </div>
                 </div>
               </div>
@@ -5742,11 +5539,11 @@
               
 
               <div class="col-md-3 mt-2">
-                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="larkspur" autocomplete="off" onclick="toggleItem('Larkspur')">
-                  <img class="item-image" src="img/larkspur.png" alt="" width="100%">
+                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="helios-prime" autocomplete="off" onclick="toggleItem('Helios Prime')">
+                  <img class="item-image" src="img/helios-prime.png" alt="" width="100%">
                   <br>
                   <div class="nameplate">
-                    Larkspur
+                    Helios Prime
                   </div>
                 </div>
               </div>
@@ -5754,11 +5551,11 @@
               
 
               <div class="col-md-3 mt-2">
-                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="phaedra" autocomplete="off" onclick="toggleItem('Phaedra')">
-                  <img class="item-image" src="img/phaedra.png" alt="" width="100%">
+                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="oxylus" autocomplete="off" onclick="toggleItem('Oxylus')">
+                  <img class="item-image" src="img/oxylus.png" alt="" width="100%">
                   <br>
                   <div class="nameplate">
-                    Phaedra
+                    Oxylus
                   </div>
                 </div>
               </div>
@@ -5766,11 +5563,11 @@
               
 
               <div class="col-md-3 mt-2">
-                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="velocitus" autocomplete="off" onclick="toggleItem('Velocitus')">
-                  <img class="item-image" src="img/velocitus.png" alt="" width="100%">
+                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="shade" autocomplete="off" onclick="toggleItem('Shade')">
+                  <img class="item-image" src="img/shade.png" alt="" width="100%">
                   <br>
                   <div class="nameplate">
-                    Velocitus
+                    Shade
                   </div>
                 </div>
               </div>
@@ -5778,11 +5575,11 @@
               
 
               <div class="col-md-3 mt-2">
-                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="agkuza" autocomplete="off" onclick="toggleItem('Agkuza')">
-                  <img class="item-image" src="img/agkuza.png" alt="" width="100%">
+                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="taxon" autocomplete="off" onclick="toggleItem('Taxon')">
+                  <img class="item-image" src="img/taxon.png" alt="" width="100%">
                   <br>
                   <div class="nameplate">
-                    Agkuza
+                    Taxon
                   </div>
                 </div>
               </div>
@@ -5790,11 +5587,11 @@
               
 
               <div class="col-md-3 mt-2">
-                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="centaur" autocomplete="off" onclick="toggleItem('Centaur')">
-                  <img class="item-image" src="img/centaur.png" alt="" width="100%">
+                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="wyrm" autocomplete="off" onclick="toggleItem('Wyrm')">
+                  <img class="item-image" src="img/wyrm.png" alt="" width="100%">
                   <br>
                   <div class="nameplate">
-                    Centaur
+                    Wyrm
                   </div>
                 </div>
               </div>
@@ -5802,11 +5599,11 @@
               
 
               <div class="col-md-3 mt-2">
-                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="kaszas" autocomplete="off" onclick="toggleItem('Kaszas')">
-                  <img class="item-image" src="img/kaszas.png" alt="" width="100%">
+                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="wyrm-prime" autocomplete="off" onclick="toggleItem('Wyrm Prime')">
+                  <img class="item-image" src="img/wyrm-prime.png" alt="" width="100%">
                   <br>
                   <div class="nameplate">
-                    Kaszas
+                    Wyrm Prime
                   </div>
                 </div>
               </div>
@@ -5814,11 +5611,11 @@
               
 
               <div class="col-md-3 mt-2">
-                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="knux" autocomplete="off" onclick="toggleItem('Knux')">
-                  <img class="item-image" src="img/knux.png" alt="" width="100%">
+                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="cryotra" autocomplete="off" onclick="toggleItem('Cryotra')">
+                  <img class="item-image" src="img/cryotra.png" alt="" width="100%">
                   <br>
                   <div class="nameplate">
-                    Knux
+                    Cryotra
                   </div>
                 </div>
               </div>
@@ -5826,11 +5623,11 @@
               
 
               <div class="col-md-3 mt-2">
-                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="onorix" autocomplete="off" onclick="toggleItem('Onorix')">
-                  <img class="item-image" src="img/onorix.png" alt="" width="100%">
+                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="helstrum" autocomplete="off" onclick="toggleItem('Helstrum')">
+                  <img class="item-image" src="img/helstrum.png" alt="" width="100%">
                   <br>
                   <div class="nameplate">
-                    Onorix
+                    Helstrum
                   </div>
                 </div>
               </div>
@@ -5838,11 +5635,11 @@
               
 
               <div class="col-md-3 mt-2">
-                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="rathbone" autocomplete="off" onclick="toggleItem('Rathbone')">
-                  <img class="item-image" src="img/rathbone.png" alt="" width="100%">
+                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="tazicor" autocomplete="off" onclick="toggleItem('Tazicor')">
+                  <img class="item-image" src="img/tazicor.png" alt="" width="100%">
                   <br>
                   <div class="nameplate">
-                    Rathbone
+                    Tazicor
                   </div>
                 </div>
               </div>
@@ -5850,11 +5647,11 @@
               
 
               <div class="col-md-3 mt-2">
-                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="veritux" autocomplete="off" onclick="toggleItem('Veritux')">
-                  <img class="item-image" src="img/veritux.png" alt="" width="100%">
+                <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="vulcax" autocomplete="off" onclick="toggleItem('Vulcax')">
+                  <img class="item-image" src="img/vulcax.png" alt="" width="100%">
                   <br>
                   <div class="nameplate">
-                    Veritux
+                    Vulcax
                   </div>
                 </div>
               </div>
