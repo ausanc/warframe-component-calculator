@@ -42,11 +42,17 @@ body {
   width: 100%;
 }
 
-.navbar-dark {
+.top-bar {
   color: white;
   background-color: #343c3f;
+  width: 100%;
 }
 
-/* #main-content {
-  padding-top: 65px;
-} */
+.top-bar a {
+  color: white;
+}
+
+.top-bar > div > div:first-child {
+  text-transform: uppercase;
+  font-family: 'Abel', sans-serif;
+}
