@@ -1,15 +1,26 @@
+/* General */
 body {
   font-family: 'Lato', sans-serif;
   background-color: #f2efe9;
 }
+/* End of general */
 
+
+
+/* Selectable item boxes */
 .btn-secondary {
   color: rgb(197, 197, 197);
   background-color: #9eb8c2;
+  /* background-image: linear-gradient(325deg, #607c86, #9eb8c2); */
 }
 
 .btn-secondary:hover {
   background-color: #9eb8c2;
+  border-color: rgb(41, 41, 41);
+}
+
+.btn-secondary.active {
+  border-color: rgb(41, 41, 41);
 }
 
 .nameplate {
@@ -27,7 +38,7 @@ body {
   border-style: solid;
 }
 
-.active .item-image {
+.item-box.active > img {
   opacity: 1;
 }
 
@@ -35,13 +46,12 @@ body {
   width: 90%;
   margin-top: 1em;
   margin-bottom: 1em;
-  opacity: 0.5;
 }
+/* End of selectable item boxes */
 
-.nav-tabs {
-  width: 100%;
-}
 
+
+/* Nav bar */
 .top-bar {
   color: white;
   background-color: #343c3f;
@@ -56,3 +66,27 @@ body {
   text-transform: uppercase;
   font-family: 'Abel', sans-serif;
 }
+/* End of nav bar */
+
+
+
+/* Category tabs */
+.nav-tabs {
+  width: 100%;
+  border-bottom: none;
+}
+
+.nav-tabs .nav-item .nav-link {
+  color: #111111;
+}
+
+.nav-tabs .nav-item .nav-link.active {
+  background-color: #ccc1a0;
+  border-color: #ccc1a0;
+  color: #111111;
+}
+
+.tab-pane {
+  background-color: #ccc1a0;
+}
+/* End of category tabs*/

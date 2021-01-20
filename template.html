@@ -13,11 +13,6 @@
 </head>
 <body>
 
-  <!-- <div class="top-bar">
-    <h4>Warframe Component Cost Calculator</h4>
-    <h6><em>Tool version 1.0 for Warframe version 29.6 Orphix Venom</em></h6>
-  </div> -->
-
   <div class="container-fluid ml-0">
 
     <div class="top-bar px-3 py-1 mb-2">
@@ -54,8 +49,8 @@
 
           <div class="col-md-3">
             <div class="d-flex justify-content-end">
-              <button class="btn btn-info mt-1" onclick="selectAllItems()">Select All</button>
-              <button class="btn btn-info ml-1 mt-1" onclick="deselectAllItems()">Deselect All</button>
+              <button class="btn btn-info btn-sm mt-1" onclick="selectAllItems()">Select All</button>
+              <button class="btn btn-info btn-sm ml-1 mt-1" onclick="deselectAllItems()">Deselect All</button>
             </div>
           </div>
         </div>
@@ -69,10 +64,10 @@
           {% for category in category_data %}
           <div class="tab-pane fade show {% if loop.first %}active{% endif %}" id="{{ category.name }}" role="tabpanel">
 
-            <div class="row no-gutters">
+            <div class="row no-gutters p-2">
               {% for item_name in category.item_info %}
 
-              <div class="col-md-2 mt-2">
+              <div class="col-md-2 mb-2">
                 <div type="button" class="btn btn-secondary btn-block item-box active" data-toggle="button" id="{{ item_name[2] }}" autocomplete="off" onclick="toggleItem('{{ item_name[0] }}')">
                   <img class="item-image" src="img/{{ item_name[1] }}" alt="" width="100%">
                   <br>
