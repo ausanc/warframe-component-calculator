@@ -1,18 +1,20 @@
-// Loaded at the end of the page
+// Note: load this file after item-components.js and all-item-names.js
+// itemComponents contains an array of components and quantities, stored against item name. It is generated during the data processing stage
+// allItemNames contains the HTML IDs for each item, stored against item name. It is generated during the data processing stage
 
-// itemComponents data is loaded in previous script, which is generated 
+var selectedItems = []            // Stores the names of selected items
+var selectedItemsComponents = {}  // Stores the name and number of each component needed to craft the selected items
 
-var selectedItems = []
-
-var selectedItemsComponents = {}
-
-ignoredComponents = ["Akbolto", "Akstiletto", "Amphis", "Ankyros", "Atomos", "Barrel", "Barrels", "Blade", "Blades", "Blueprint", "Bo", "Bolto", "Boltor", "Bonewidow Capsule", "Bonewidow Casing", "Bonewidow Engine", "Bonewidow Weapon Pod", "Boot", "Broken War", "Bronco Prime", "Bronco", "Carapace", "Cerebrum", "Cernos", "Cestra", "Chain", "Chassis", "Core", "Cortege Barrel", "Cortege Receiver", "Cortege Stock", "Decurion Barrel", "Decurion Receiver", "Disc", "Drakgoon", "Dual Cleavers", "Dual Kamas", "Dual Skana", "Dual Zoren", "Furis", "Galatine", "Gammacor", "Gauntlet", "Grakata", "Grip", "Guard", "Handle", "Harness", "Head", "Heatsink", "Hikou", "Hilt", "Kama", "Kogake", "Kohmak", "Kraken", "Krohkur", "Kronen", "Kunai", "Lato", "Latron", "Left Gauntlet", "Lex Prime", "Lex", "Limbs", "Link", "Lower Limb", "Magistar", "Magnus", "Miter", "Morgha Barrel", "Morgha Receiver", "Morgha Stock", "Motor", "Mutalist Cernos", "Neuroptics", "Nikana", "Ninkondi", "Ornament", "Pouch", "Receiver", "Receivers", "Right Gauntlet", "Rivet", "Stars", "Stock", "String", "Subcortex", "Systems", "Tipedo", "Upper Limb", "Vasto Prime", "Vasto", "Viper", "Voidrig Capsule", "Voidrig Casing", "Voidrig Engine", "Voidrig Weapon Pod", "War Blade", "War Hilt", "Wings"]
+// Here we define a an array of components which we don't want to display the quantities of in the displayed component list
+// This is mostly nested parts like chassis and systems, and weapons used to craft other weapons
+ignoredComponents = ["Aegis", "Akbolto", "Akstiletto", "Amphis", "Ankyros", "Atomos", "Barrel", "Barrels", "Blade", "Blades", "Blueprint", "Bo", "Bolto", "Boltor", "Bonewidow Capsule", "Bonewidow Casing", "Bonewidow Engine", "Bonewidow Weapon Pod", "Boot", "Broken War", "Bronco Prime", "Bronco", "Carapace", "Cerebrum", "Cernos", "Cestra", "Chain", "Chassis", "Core", "Cortege Barrel", "Cortege Receiver", "Cortege Stock", "Decurion Barrel", "Decurion Receiver", "Disc", "Drakgoon", "Dual Cleavers", "Dual Kamas", "Dual Skana", "Dual Zoren", "Furis", "Galatine", "Gammacor", "Gauntlet", "Grakata", "Grip", "Guard", "Handle", "Harness", "Head", "Heatsink", "Hikou", "Hilt", "Kama", "Kogake", "Kohmak", "Kraken", "Krohkur", "Kronen", "Kunai", "Lato", "Latron", "Left Gauntlet", "Lex Prime", "Lex", "Limbs", "Link", "Lower Limb", "Magistar", "Magnus", "Miter", "Morgha Barrel", "Morgha Receiver", "Morgha Stock", "Motor", "Mutalist Cernos", "Neuroptics", "Nikana", "Ninkondi", "Ornament", "Pouch", "Receiver", "Receivers", "Right Gauntlet", "Rivet", "Stars", "Stock", "String", "Subcortex", "Systems", "Tipedo", "Upper Limb", "Vasto Prime", "Vasto", "Viper", "Voidrig Capsule", "Voidrig Casing", "Voidrig Engine", "Voidrig Weapon Pod", "War Blade", "War Hilt", "Wings"]
 
 /**
- * 
+ * Identify and count the components needed to craft all of the items in selectedItems, storing the counts in 
+ * selectedItemsComponents, then call the function to update the displayed list of components.
  */
 function updateSelectedItemComponents() {
-  // Reset the components list. Replace with updating functionality later
+  // Reset the components list
   selectedItemsComponents = {}
 
   // For each selected item, access the components
@@ -33,7 +35,6 @@ function updateSelectedItemComponents() {
     });
   });
 
-  // console.log(selectedItemsComponents)
   updateComponentListDisplay()
 }
 
@@ -61,6 +62,9 @@ function updateComponentListDisplay() {
   componentListContainer.innerHTML = newHTML
 }
 
+/**
+ * Add the item to the list of selected items, update the corresponding cookie, then update the displayed list of components.
+ */
 function addItem(itemName) {
   // Add the item name to the internal list of selected items
   selectedItems.push(itemName)
@@ -72,6 +76,9 @@ function addItem(itemName) {
   updateSelectedItemComponents()
 }
 
+/**
+ * Remove the item from the list of selected items, remove the corresponding cookie, then update the displayed list of components.
+ */
 function removeItem(itemName) {
   // Remove the item name from the internal list of selected items
   selectedItems.splice(selectedItems.indexOf(itemName), 1)
@@ -83,6 +90,9 @@ function removeItem(itemName) {
   updateSelectedItemComponents()
 }
 
+/**
+ * Toggle the status of the provided item via the addItem and removeItem functions.
+ */
 function toggleItem(itemName) {
   if (selectedItems.includes(itemName)) {
     removeItem(itemName)
@@ -91,7 +101,11 @@ function toggleItem(itemName) {
   }
 }
 
-// Update the button element to pressed and update the list of components
+/**
+ * Update the button element to display as pressed and update the internal list of selected items.
+ * This function is used in bulk selection operations, and as such we don't want to update the displayed list until after all items have been selected.
+ * As such, this function does not use the addItem function, which calls the display update at the end. 
+ */
 function selectItem(itemName) {
   button = document.querySelector("#" + allItemNames[itemName])
   button.classList.remove("active")
@@ -99,7 +113,11 @@ function selectItem(itemName) {
   localStorage.setItem(allItemNames[itemName], "selected")
 }
 
-// Update the button element to not pressed and update the list of components
+/**
+ * Update the button element to display as not pressed and update the internal list of selected items.
+ * This function is used in bulk deselection operations, and as such we don't want to update the displayed list until after all items have been deselected.
+ * As such, this function does not use the removeItem function, which calls the display update at the end. 
+ */
 function deselectItem(itemName) {
   button = document.querySelector("#" + allItemNames[itemName])
   button.classList.add("active")
@@ -107,20 +125,29 @@ function deselectItem(itemName) {
   localStorage.removeItem(allItemNames[itemName])
 }
 
-// Populate the selections from the cookies
+/**
+ * Populate the already selected items from the cookies and update the displayed list of components to match.
+ */
 function loadSelectionsFromCookies() {
+  // Iterate over all items, selecting those that have a cookie stored which is equal to "selected" 
   Object.keys(allItemNames).forEach(itemName => {
     itemNameSafe = allItemNames[itemName]
     itemCookie = localStorage.getItem(itemNameSafe)
     if (itemCookie != null) {
       if (itemCookie == "selected") {
+        // Call selectItem to add the item to the internal list of selected items without updating the display, as updating the display for each item
+        // causes page-freezing lag
         selectItem(itemName)
       }
     }
   })
+  // Now that all of the selected items are displayed as pressed and listed in the selectedItems array, update the displayed list of components
   updateSelectedItemComponents()
 }
 
+/**
+ * Bulk select all items, setting their buttons to pressed and updating the displayed list of components.
+ */
 function selectAllItems() {
   selectedItems = []
   Object.keys(allItemNames).forEach(itemName => {
@@ -129,6 +156,9 @@ function selectAllItems() {
   updateSelectedItemComponents()
 }
 
+/**
+ * Bulk deselect all items, setting their buttons to unpressed and updating the displayed list of components.
+ */
 function deselectAllItems() {
   Object.keys(allItemNames).forEach(itemName => {
     deselectItem(itemName)
@@ -136,4 +166,5 @@ function deselectAllItems() {
   updateSelectedItemComponents()
 }
 
+// When this JS file is loaded, load the selected items from the cookies
 loadSelectionsFromCookies()
