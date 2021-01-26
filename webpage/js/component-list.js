@@ -52,9 +52,19 @@ function updateComponentListDisplay() {
   
   // For each component we want listed, append the name and quantity to the newHTML string 
   selectedItemsComponentsArray.forEach(component => {
+    // Bulk listing update
     var current = componentListContainer.innerHTML
     var resourceHTML = `${component[0]}: ${component[1]}<br>`
     newHTML = newHTML + resourceHTML
+
+    // Individual counts update
+    componentID = allComponentNames[component[0]]
+    componentQuantityDisplay = document.getElementById(componentID)
+    try {
+      componentQuantityDisplay.innerHTML = component[1]
+    } catch {
+      console.log("Failed to display quantity for item " + component[0])
+    }
   });
 
   // Finish the newHTML string and set the component list's contents to it
@@ -163,6 +173,7 @@ function deselectAllItems() {
   Object.keys(allItemNames).forEach(itemName => {
     deselectItem(itemName)
   })
+  
   updateSelectedItemComponents()
 }
 

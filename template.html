@@ -88,6 +88,21 @@
 
       <!-- Components list column -->
       <div class="col-md-2">
+        <div>
+          {% for group in component_group_info %}
+          <div class="mb-3 resource-group-box">
+            <h5 class="text-center m-0">{{ group.name }}</h5>
+            {% for item_name in group.item_info %}
+            <div class="d-flex">
+              <img class="align-self-center mr-1" src="img/{{ item_name[1] }}" alt="" width="30px" height="20px">
+              <p class="mb-0">{{ item_name[0] }}</p>
+              <p class="ml-auto mb-0" id="{{ item_name[2] }}">0</p>
+            </div>
+            {% endfor %}
+          </div>
+          {% endfor %}
+        </div>
+
         <div id="componentListContainer">
 
         </div>
@@ -101,6 +116,7 @@
 
   <script src="./js/item-components.js"></script>
   <script src="./js/all-item-names.js"></script>
+  <script src="./js/all-component-names.js"></script>
   <script src="./js/component-list.js"></script>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
